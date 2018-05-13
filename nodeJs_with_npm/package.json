@@ -1,0 +1,20 @@
+{
+  "name": "nodejs_with_npm",
+  "version": "1.0.0",
+  "description": "seeing how npm init and all is done",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "akarki",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.22.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "nodejs_with_express",
+  "version": "1.0.0",
+  "description": "using express for first time, exciting",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node"
+  ],
+  "author": "akarki",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
