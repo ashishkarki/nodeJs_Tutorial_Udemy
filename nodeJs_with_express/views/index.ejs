@@ -1,8 +1,31 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="assets/style.css" rel="stylesheet">
-  </head>
-  <body>
-    Hello World from Ejs!!
-  </body>
+
+<head>
+  <link rel="stylesheet" href="assets/style.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  Hello World from Ejs!!
+  <form action="/person" method="POST">
+    User name:
+    <input type="text" name="username" id="username">
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- sending json post data: run on the load -->
+  <script>
+    $.ajax({
+      type: "POST",
+      url: "/personjson",
+      data: JSON.stringify({ username: 'akark' }),
+      datatype: 'json',
+      contentType: 'application/json'
+    });
+  </script>
+</body>
+
 </html>

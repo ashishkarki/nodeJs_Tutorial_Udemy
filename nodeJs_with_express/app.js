@@ -12,7 +12,10 @@ app.use('/', (req, res, next) => {
 });
 
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+// create application/json parser
+var jsonParser = bodyParser.json()
 
 app.set('view engine', 'ejs');
 
@@ -24,6 +27,16 @@ app.get('/', (req, res) => {
 app.get('/person/:id', (req, res) => {
   // res.send('<html><body><h1>Person:'+ req.params.id +'</h1></body></html>')
   res.render('person', { ID: req.params.id, Qstr: req.query.qstr })
+});
+
+app.post('/person', urlencodedParser, (req, res) => {
+  if (!req.body) return res.sendStatus(400)
+  res.send('welcome, ' + req.body.username)
+});
+
+app.post('/personjson', jsonParser, (req, res) => {
+  if (!req.body) return res.sendStatus(400)
+  res.send('welcome from JSON, ' + req.body.username)
 });
 
 app.get('/api', (req, res) => {
